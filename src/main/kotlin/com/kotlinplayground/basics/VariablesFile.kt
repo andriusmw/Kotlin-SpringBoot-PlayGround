@@ -9,4 +9,23 @@ fun main() {
     println(age)
     age = 35
     println(age)
+
+    val salary = 30000L
+    // with the L at the end it assumes it is a Long type
+    println(salary)
+
+    val course = "Jotlin Spring"
+    println("course : $course" )
+    println("course : $course and the course length is: ${course.length}")
+
+    val multiLine = "ABC \n DEF"
+    println(multiLine)
+
+    // the triple " writes in different lines without changing columns
+    val multiLine1 =  """
+        ABC
+        DEF
+        """.trimIndent()
+    println(multiLine1)
+
 }
