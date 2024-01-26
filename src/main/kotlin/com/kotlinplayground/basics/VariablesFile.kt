@@ -1,5 +1,8 @@
 package com.kotlinplayground.basics
 
+import com.kotlinplayground.functions.courseName
+import com.kotlinplayground.functions.topLevelFunction
+
 fun main() {
     // val = const
     val name : String = "Dilip";
@@ -27,5 +30,8 @@ fun main() {
         DEF
         """.trimIndent()
     println(multiLine1)
-
+    topLevelFunction()
+    val num = topLevelFunction()
+    println("Num is : $num")
+   println(courseName)
 }
