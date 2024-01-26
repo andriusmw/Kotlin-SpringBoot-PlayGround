@@ -41,6 +41,8 @@ fun main(){
 
     printPersonDetails("Dilip", "abc@gmail.com", LocalDate.parse("2000-01-01"))
     printPersonDetails("Dilip")
+    //Name PARAMETERS
+    printPersonDetails(name = "Dilip", email = "abc@gmail.com")
 
 }
 
