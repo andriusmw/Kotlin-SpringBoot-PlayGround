@@ -3,7 +3,7 @@ package com.kotlinplayground.interfaces
 import com.kotlinplayground.classes.Course
 
 interface  CourseRepository {
-
+    val isCoursePersisted : Boolean
     fun getById(id: Int) : Course
 
     //Gets the course, saves it and return the id
@@ -18,11 +18,19 @@ interface Repository {
 }
 
 class SqlCourseRepository : CourseRepository, Repository{
+    override var isCoursePersisted: Boolean = false
+
+
     override fun getById(id: Int): Course {
         return Course(id,
             "Reactive Programing in Modern Java",
             "Dilip")
 
+    }
+
+    override fun save(course: Course): Int {
+        isCoursePersisted = true
+        return super.save(course)
     }
 
     override fun getAll(): Any {
@@ -33,6 +41,9 @@ class SqlCourseRepository : CourseRepository, Repository{
 
 
 class NoSqlCourseRepository : CourseRepository{
+    override var isCoursePersisted: Boolean = false
+
+
     override fun getById(id: Int): Course {
         return Course(id,
             "Reactive Programing in Modern Java",
@@ -76,6 +87,7 @@ fun main() {
     val courseId = sqlCourseRepository.save(Course(5,
         "Reactive Programing in Modern Java",
         "Dilip"))
+    println("Course persisted value is ${sqlCourseRepository.isCoursePersisted} ")
     println("Saved Course Id is $courseId")
 
 
