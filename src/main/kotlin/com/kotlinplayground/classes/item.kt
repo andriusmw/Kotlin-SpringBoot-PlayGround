@@ -16,6 +16,7 @@ class Item() {
     }
 
     set(value) {
+        //Setter should be just bellow the getters so it takes the value of field of the getter
         println("Inside thr Setter")
         if(value>= 0.0) {
             println("Inside thr Setter > if")
