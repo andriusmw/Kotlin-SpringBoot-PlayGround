@@ -1,14 +1,18 @@
 package com.kotlinplayground.classes
 
 open class User(val name: String){
-    fun login(){
+    open fun login(){
         println("Inside User Login")
     }
 }
 //Inheritance is only allowed if you use the "open" keyword before the class
 //This is creating a new class with a primary constructor which has a name property of type string
 // and it "extends" the User open class.
-class Student(name: String) : User(name)
+class Student(name: String) : User(name){
+    override fun login(){
+        println("Inside Student Login")
+    }
+}
 
 class Instructor(name: String) : User(name)
 
