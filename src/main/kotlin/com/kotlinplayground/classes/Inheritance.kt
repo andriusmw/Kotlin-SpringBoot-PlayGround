@@ -1,6 +1,7 @@
 package com.kotlinplayground.classes
 
 open class User(val name: String){
+    open var isLoggedIn : Boolean = false
     open fun login(){
         println("Inside User Login")
     }
@@ -9,8 +10,13 @@ open class User(val name: String){
 //This is creating a new class with a primary constructor which has a name property of type string
 // and it "extends" the User open class.
 class Student(name: String) : User(name){
+    override var isLoggedIn : Boolean = false
+
     override fun login(){
         println("Inside Student Login")
+        //Override nullyfies the extended function and instead it will use this one when called
+        super.login()
+        //Now we have to use super. in order to access the previous login() function
     }
 }
 
@@ -22,6 +28,8 @@ fun main() {
     val student = Student("Alex")
     println("Name is ${student.name}")
     student.login()
+    student.isLoggedIn = true
+    println("student value is: ${student.isLoggedIn}")
 
     val instructor = Instructor("Dillip")
     println("Name is ${instructor.name}")
