@@ -5,6 +5,12 @@ class Person(val name: String = "",
 ) {
     //Secondary constructor
     var email: String = ""
+    var nameLength: Int = 0
+    init {
+        println("Inside Init Block")
+        nameLength = name.length
+    }
+
     constructor(_email: String,
                 _name: String = "Jordan",
                 _age: Int = 10
@@ -21,6 +27,7 @@ class Person(val name: String = "",
 }
 
 fun main(){
+    /*
     //creating an instance of the class, now we can access this class data and functions
     val person = Person( "Alex", 25)
     person.action()
@@ -36,7 +43,11 @@ fun main(){
     val person3 = Person(_email = "abc@gmail.com",)
     println("Name3: ${person3.name} and age: ${person3.age} and email is: ${person3.email}")
 
+    We commented all of this to not see too much times the value of the init
+    cause we are instacing many times the Person Class Object */
+
     val person4 = Person(_email = "abc@gmail.com",_name = "Michael Jackson", _age = 25000)
-    println("Name4: ${person4.name} and age: ${person4.age} and email is: ${person4.email}")
+    println("Name4: ${person4.name} and age: ${person4.age} and email is: ${person4.email} " +
+            "and NameLength is: ${person4.nameLength}")
 
 }
