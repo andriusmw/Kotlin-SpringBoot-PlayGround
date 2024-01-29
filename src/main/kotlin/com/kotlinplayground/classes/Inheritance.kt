@@ -12,6 +12,11 @@ open class User(val name: String){
 class Student(name: String) : User(name){
     override var isLoggedIn : Boolean = false
 
+    companion object {
+      const  val noOfEnrrolledCourses = 10
+        fun country() = "USA"
+    }
+
     override fun login(){
         println("Inside Student Login")
         //Override nullyfies the extended function and instead it will use this one when called
@@ -30,6 +35,10 @@ fun main() {
     student.login()
     student.isLoggedIn = true
     println("student value is: ${student.isLoggedIn}")
+
+    val country = Student.country()
+    println("Coutry is: $country")
+    println("noOfEnrrolledCourses is: ${Student.noOfEnrrolledCourses}")
 
     val instructor = Instructor("Dillip")
     println("Name is ${instructor.name}")
