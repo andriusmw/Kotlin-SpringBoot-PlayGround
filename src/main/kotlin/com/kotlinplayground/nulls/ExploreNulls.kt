@@ -15,7 +15,10 @@ fun main() {
        println("ValueLength is: ${nameNullable.length}")
 
     } */
-    val length = nameNullable?.length ?: 0 // ?: Elvis operator
+    nameNullable = "Alex"
+    //val length = nameNullable?.length?.toLong() ?: 0 // ?: Elvis operator
+    val length = nameNullable.length.toLong() ?: 0 // ?: Elvis operator
+
     println("length: $length")
 
     nameNullable = "Dilip"
@@ -27,6 +30,7 @@ fun main() {
     //New instance of data class Movie
     val movie = Movie(null,"Avengers")
     val savedMovie = saveMovie(movie)
+   println( savedMovie.id!!) // means cannot be null - non-null assertions!!
     println("savedMovie= $savedMovie")
 }
 
