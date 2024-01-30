@@ -1,15 +1,22 @@
 package com.kotlinplayground.nulls
 
+//--------------------------DATA CLASSES ------------------------------
 data class  Movie(
     val id: Int?,
     val name: String
 )
 
-
+//-------------------------------MAIN -----------------------------------------
 fun main() {
 
     var nameNullable : String?  = null
-    println("Value is: $nameNullable")
+    println("ValueLength is: ${nameNullable?.length}") // SafeOperator
+   /* if(nameNullable!=null){
+       println("ValueLength is: ${nameNullable.length}")
+
+    } */
+    val length = nameNullable?.length ?: 0 // ?: Elvis operator
+    println("length: $length")
 
     nameNullable = "Dilip"
     println("Value is: $nameNullable")
@@ -22,6 +29,8 @@ fun main() {
     val savedMovie = saveMovie(movie)
     println("savedMovie= $savedMovie")
 }
+
+//------------------------------- OTHER FUNCTIONS ---------------------------------
 
 fun saveMovie(movie: Movie): Movie {
     return movie.copy(id = 1)
