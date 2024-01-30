@@ -10,6 +10,12 @@ data class  Movie(
 fun main() {
 
     var nameNullable : String?  = null
+
+    //printName(nameNullable!!)
+
+    nameNullable?.run {
+    printName(this)}
+
     println("ValueLength is: ${nameNullable?.length}") // SafeOperator
    /* if(nameNullable!=null){
        println("ValueLength is: ${nameNullable.length}")
@@ -41,3 +47,10 @@ fun saveMovie(movie: Movie): Movie {
     // .copy() copies the object or instance and adds properties inside the parentesis
 
 }
+
+//--------------------------------------------
+
+fun printName(name: String){
+    println("Name is : $name")
+}
+
