@@ -63,9 +63,11 @@ fun main() {
     instructor.login()
 
     //New instance
-    // we don't see private  fun secret.
-    // we don't see protected fun logout
+    // we don't see private  fun secret on user.
+    // we don't see protected fun logout on user.
     val user = User("Dilip")
+    // user.
+    //we see private protected fun logout on student cause it is inside its class
     student.logout()
     student.login()
 
