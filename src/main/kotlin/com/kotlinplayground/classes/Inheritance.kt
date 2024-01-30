@@ -5,6 +5,16 @@ open class User(val name: String){
     open fun login(){
         println("Inside User Login")
     }
+
+    private fun secret(){
+        println("Inside User's Secret")
+    }
+
+    open protected fun logout(){
+        println("Inside User's Logout")
+    }
+
+
 }
 //Inheritance is only allowed if you use the "open" keyword before the class
 //This is creating a new class with a primary constructor which has a name property of type string
@@ -22,6 +32,14 @@ class Student(name: String) : User(name){
         //Override nullyfies the extended function and instead it will use this one when called
         super.login()
         //Now we have to use super. in order to access the previous login() function
+    }
+
+    public override fun logout(){
+        //We see the protected fun logout, cause we are inside
+        // A CLASS INSTANCED BY THE User's class.
+        // and we added open for the override.
+        super.logout()
+        println("Inside Student's Logout")
     }
 }
 
@@ -43,4 +61,12 @@ fun main() {
     val instructor = Instructor("Dillip")
     println("Name is ${instructor.name}")
     instructor.login()
+
+    //New instance
+    // we don't see private  fun secret.
+    // we don't see protected fun logout
+    val user = User("Dilip")
+    student.logout()
+    student.login()
+
 }
