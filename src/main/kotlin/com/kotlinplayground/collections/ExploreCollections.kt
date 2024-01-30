@@ -16,4 +16,15 @@ fun main() {
     println("mutableset: $mutableSet")
     mutableSet.add("Adam")
     println("mutableset after: $mutableSet")
+
+   val nameAgeMap =  mapOf("Dilip" to 34, "Scooby" to 4)
+    println("nameAgeMap: $nameAgeMap")
+
+    val mutableNameAgeMap =  mutableMapOf("Dilip" to 34, "Scooby" to 4)
+    println("mutableNameAgeMap: $mutableNameAgeMap")
+    //name MutableMapOf  [KEY] = VALUE
+    mutableNameAgeMap["abc"] = 100
+    println("mutableNameAgeMap after: $mutableNameAgeMap")
+
+
 }
