@@ -3,8 +3,18 @@ package com.kotlinplayground.classes
 data class Course(
     val id: Int,
     val name: String,
-    val author: String
+    val author: String,
+    //new val            type of            default value
+    val courseCategory: CourseCategory = CourseCategory.DEVELOPMENT
 )
+
+enum class CourseCategory{
+    DEVELOPMENT,
+    BUSSINES,
+    DESIGN,
+    MARKETING
+}
+
 
 fun main() {
     //Instancing our class
@@ -32,4 +42,10 @@ fun main() {
     println(course3)
 
 
+    val marketingCourse = Course(4,
+        "Facebook Marketing",
+        "Dilip",
+        CourseCategory.MARKETING
+    )
+    println(marketingCourse)
 }
