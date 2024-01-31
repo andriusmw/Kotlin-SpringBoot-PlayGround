@@ -4,12 +4,33 @@ import com.kotlinplayground.dataset.Course
 import com.kotlinplayground.dataset.CourseCategory
 import com.kotlinplayground.dataset.courseList
 
+//---------------------------------MAIN----------------------
+
 fun main() {
 
     val courseList = courseList()
 
-    exploreFilter(courseList)
+    //exploreFilter(courseList) -uncomment to see the explorerFilter results
+    exploreMap(courseList)
 }
+
+
+//---------------------------- FUNCTIONS  -------------------------
+
+fun exploreMap(courseList: MutableList<Course>) {
+
+   val courses =  courseList.map { "${it.name} - ${it.category}" }
+       .forEach{
+           println("courses: $it")
+       }
+
+
+
+
+}
+
+
+//---------------------------------------------
 
 fun exploreFilter(courseList: MutableList<Course>) {
 
